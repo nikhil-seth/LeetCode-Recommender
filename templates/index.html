@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>LeetCode Recommender</title>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <th>Difficulty</th>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Link</th>
+                <th>Premium</th>
+            </tr>
+            {% for obj in result %}
+            <tr>
+                <td>{{obj.difficulty}}</td>
+                <td>{{obj.questionId}}</td>
+                <td>{{obj.title}}</td>
+                <td>{{obj.link}}</td>
+                <td>{{obj.paidOnly}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <form action="/update" method="post">
+        <input type="submit" name="submit" value="Update Question List">
+        </form> 
+    </body>
+</html>
